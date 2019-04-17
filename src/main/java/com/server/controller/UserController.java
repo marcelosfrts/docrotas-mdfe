@@ -1,10 +1,14 @@
 package com.server.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +22,17 @@ public class UserController {
 	private UserRepository userRepository;
 	
 	@GetMapping(value="/users")
-	public Page<UserEntity> pesquisar(@RequestParam(value="pag", required=true)int pagina,
+	public List<UserEntity> seach() {
+		return userRepository.findAll();
+	}
+	
+	@PostMapping(value="/user")
+	public UserEntity setUser(@RequestBody UserEntity userEntity) {
+		return userRepository.save(userEntity);
+	}
+	
+	@GetMapping(value="/pgusers")
+	public Page<UserEntity> search(@RequestParam(value="pag", required=true)int pagina,
 									  @RequestParam(value="qtd", required=true)int qtd,
 									  @RequestParam(value="userid", required=false)Long userId,
 									  @RequestParam(value="idcompany", required=false)Long idCompany,
@@ -44,13 +58,5 @@ public class UserController {
 		
 		return pageUser;
 	}
-	
-	
-/*	@RequestMapping("/users")
-	@ResponseBody
-	public String getUsers() {
-		return "{\"users\":[{\"name\":\"Lucas\", \"country\":\"Brazil\"}," +
-		           "{\"name\":\"Jackie\",\"country\":\"China\"}]}";
-	}
-*/	
+
 }

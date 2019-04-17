@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdfeProc xmlns="http://www.portalfiscal.inf.br/mdfe" versao="3.00">
+    <MDFe xmlns="http://www.portalfiscal.inf.br/mdfe">
+        <infMDFe versao="3.00" Id="MDFe35180303876961000233580010000037411231618483">
+            <ide>
+                <cUF>35</cUF>
+                <tpAmb>2</tpAmb>
+                <tpEmit>1</tpEmit>
+                <tpTransp>1</tpTransp>
+                <mod>58</mod>
+                <serie>1</serie>
+                <nMDF>3741</nMDF>
+                <cDV>3</cDV>
+                <modal>1</modal>
+                <dhEmi>2019-04-17T00:06:24-0300</dhEmi>
+                <tpEmis>1</tpEmis>
+                <procEmi>0</procEmi>
+                <verProc>1.5.3</verProc>
+                <UFIni>SP</UFIni>
+                <UFFim>MG</UFFim>
+                <infMunCarrega>
+                    <cMunCarrega>3550308</cMunCarrega>
+                    <xMunCarrega>SAO PAULO</xMunCarrega>
+                </infMunCarrega>
+                <dhIniViagem>2019-04-17T00:06:24-0300</dhIniViagem>
+            </ide>
+            <emit>
+                <CNPJ>03876961000233</CNPJ>
+                <IE>143263811113</IE>
+                <xNome>CAMPOS E BUENO TRANSPORTES LTDA - EPP</xNome>
+                <xFant>IDEIA DE MINAS TRANSPORTES</xFant>
+                <enderEmit CEP="02188090" UF="SP">
+                    <xLgr>RUA SOLDADO ARISTIDES GOUVEIA</xLgr>
+                    <nro>374</nro>
+                    <xBairro>PARQUE NOVO MUNDO</xBairro>
+                    <cMun>3550308</cMun>
+                    <xMun>SAO PAULO</xMun>
+                    <fone>1138046933</fone>
+                </enderEmit>
+            </emit>
+            <infModal versaoModal="3.00">
+                <rodo>
+                    <infANTT>
+                        <infCIOT>
+                            <CIOT>012345678912</CIOT>
+                            <CNPJ>01405106000138</CNPJ>
+                        </infCIOT>
+                        <RNTRC>46881758</RNTRC>
+                    </infANTT>
+                    <infANTT>
+                        <capKG>32000</capKG>
+                        <condutor>
+                            <CPF>11322031630</CPF>
+                            <xNome>LUIZ GUSTAVO DE SOUZA NUNES</xNome>
+                        </condutor>
+                        <placa>JAH5522</placa>
+                        <RENAVAM>475626605</RENAVAM>
+                        <tara>16000</tara>
+                        <tpCar>02</tpCar>
+                        <tpRod>03</tpRod>
+                        <UF>RS</UF>
+                    </infANTT>
+                </rodo>
+            </infModal>
+            <infDoc/>
+            <seg>
+                <infResp>
+                    <CNPJ>03876961000233</CNPJ>
+                    <respSeg>1</respSeg>
+                </infResp>
+                <infSeg>
+                    <CNPJ>61198164000160</CNPJ>
+                    <xSeg>PORTO SEGURO</xSeg>
+                </infSeg>
+                <nApol>0655067051</nApol>
+                <nAver>41217630165</nAver>
+            </seg>
+            <tot>
+                <cUnid>01</cUnid>
+                <qCTe>66</qCTe>
+                <qCarga>8860.0000</qCarga>
+                <vCarga>137900.93</vCarga>
+            </tot>
+        </infMDFe>
+    </MDFe>
+</mdfeProc>

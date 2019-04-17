@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.json.simple.JSONObject;
 
+import com.server.entity.CompanyEntity;
 import com.server.entity.MenuEntity;
 
 public class MethodsUtils {
@@ -42,6 +43,22 @@ public class MethodsUtils {
 		}
 		
 		return collectionRoot.toString();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String mountedCompanySelectedJson(List<CompanyEntity> listEntityElement) throws Exception {
+		
+		Collection<JSONObject> collectionObject = new ArrayList<JSONObject>();
+		if (listEntityElement != null) {			
+			for (CompanyEntity company : listEntityElement) {
+				JSONObject jsonRoot = new JSONObject();
+				jsonRoot.put("value", company.getId());
+				jsonRoot.put("text", company.getId() + "-" + company.getReason());
+				
+				collectionObject.add(jsonRoot);
+			}
+		}
+		return collectionObject.toString();
 	}
 
 }
