@@ -2,6 +2,7 @@ package com.server.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.text.MaskFormatter;
 
@@ -47,6 +48,18 @@ public class FormatUtils {
         MaskFormatter mf = new MaskFormatter(mascara);
         mf.setValueContainsLiteralCharacters(false);
         return mf.valueToString(texto);
-    }	
+    }
+	
+	public static String DateXMLFormat(Date date) {
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+		return ZoneFormat(f.format(date));
+	}
+	
+	private static String ZoneFormat(String str) {
+		if(str != null && (str.contains("+") || str.contains("-"))) {
+			return str.substring(0, str.length() - 2) + ":" + str.substring(str.length() - 2, str.length());
+		}
+		return "";
+	}	
 
 }

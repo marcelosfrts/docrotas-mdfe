@@ -23,7 +23,7 @@ public class MountRodo {
 		this.mountInfAntt = mountInfAntt;
 	}
 
-	@XmlElement(name="infANTT")
+	@XmlElement(name="veicTracao")
 	public MountVeicTracao getMountVeicTracao() {
 		return mountVeicTracao;
 	}

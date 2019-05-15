@@ -1,7 +1,9 @@
 package com.server.mdfe;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlType(propOrder={"xSeg","cnpj"})
 public class MountInfSeg {
 
 	private String xSeg;

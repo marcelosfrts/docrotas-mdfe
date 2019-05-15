@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -32,7 +34,8 @@ import com.server.mdfe.MountRodo;
 import com.server.mdfe.MountSeg;
 import com.server.mdfe.MountTot;
 import com.server.mdfe.MountVeicTracao;
-import com.server.mdfe.XmlMdfeUtils;
+import com.server.utils.FormatUtils;
+import com.server.utils.XmlUtils;
 
 public class testXMLOutput {
 	private MountMdfeProc mountMdfeProc;
@@ -55,7 +58,6 @@ public class testXMLOutput {
 	private MountInfResp mountInfResp;
 	private MountInfSeg mountInfSeg;
 	private MountTot mountTot;
-	private XmlMdfeUtils xmlMdfeUtils = new XmlMdfeUtils();
 	
 	@Before
 	public void setUp() {
@@ -68,9 +70,10 @@ public class testXMLOutput {
 		mountIde.setMod(58);
 		mountIde.setSerie(1);
 		mountIde.setnMDF(3741);
+		mountIde.setcMDF(23161848L);
 		mountIde.setcDV(3);
 		mountIde.setModal(1);
-		mountIde.setDhEmi(xmlMdfeUtils.DateXMLFormat(new Date()));
+		mountIde.setDhEmi(FormatUtils.DateXMLFormat(new Date()));
 		mountIde.setTpEmis(1);
 		mountIde.setProcEmi(0);
 		mountIde.setVerProc("1.5.3");
@@ -83,7 +86,7 @@ public class testXMLOutput {
 		mountInfMunCarrega.setxMunCarrega("SAO PAULO");
 		
 		mountIde.setMountInfMunCarrega(mountInfMunCarrega);
-		mountIde.setDhIniViagem(xmlMdfeUtils.DateXMLFormat(new Date()));
+		mountIde.setDhIniViagem(FormatUtils.DateXMLFormat(new Date()));
 		
 		//tag emit
 		mountEmit = new MountEmit();
@@ -152,11 +155,13 @@ public class testXMLOutput {
 		mountInfMunDescarga = new MountInfMunDescarga();
 		mountInfMunDescarga.setcMunDescarga("3170206");
 		mountInfMunDescarga.setxMunDescarga("UBERLANDIA");
-		
+				
 		//tag infCTe >> N:N
 		mountInfCTe = new MountInfCTe();
 		mountInfCTe.setChCTe("35180303876961000233570010000796961000799182");
 		mountInfMunDescarga.setMountInfCTe(mountInfCTe);
+		
+		mountInfDoc.setMountInfMunDescarga(mountInfMunDescarga);
 		
 		//tag seg
 		mountSeg = new MountSeg();
@@ -204,7 +209,7 @@ public class testXMLOutput {
 	}
 	
 	@Test
-	public void testeMountMdfe() throws JAXBException, FileNotFoundException, XMLStreamException {
+	public void testeMountMdfe() throws JAXBException, XMLStreamException, IOException {
 		JAXBContext jaxbContext = JAXBContext.newInstance(MountMdfeProc.class);
 		Marshaller marshaller = jaxbContext.createMarshaller();
 		marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
@@ -212,6 +217,11 @@ public class testXMLOutput {
 		marshaller.setProperty("com.sun.xml.internal.bind.xmlHeaders", "<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		marshaller.marshal(mountMdfeProc, new File("test.xml"));
 		marshaller.marshal(mountMdfeProc, System.out);
+		
+		InputStream input = getClass().getResourceAsStream("/schema-mdfe-300/enviMDFe_v3.00.xsd");
+		String arqXsd = "/schema-mdfe-300/enviMDFe_v3.00.xsd";
+		boolean validou = XmlUtils.validarXml(mountMdfeProc.toString(), arqXsd);
+		System.out.print(validou);
 	}
 
 }

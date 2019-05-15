@@ -2,6 +2,9 @@ package com.server.mdfe;
 
 import java.math.BigDecimal;
 
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(propOrder={"qCTe","vCarga","cUnid","qCarga"})
 public class MountTot {
 
 	private Integer qCTe;

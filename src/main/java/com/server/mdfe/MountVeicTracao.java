@@ -1,7 +1,9 @@
 package com.server.mdfe;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlType(propOrder={"placa","renavam","tara","capkg","mountCondutor","tpRod","tpCar","uf"})
 public class MountVeicTracao {
 
 	private String placa;

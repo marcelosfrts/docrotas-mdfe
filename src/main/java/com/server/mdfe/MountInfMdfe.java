@@ -5,13 +5,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder={"mountIde","mountEmit","mountInfModal","mountInfDoc","mountSeg","mountTot"})
-public class MountInfMdfe extends XmlMdfeUtils {
+public class MountInfMdfe extends MdfeUtils {
 
 	private String id;
-	
-	@XmlAttribute(name="versao")
 	private String versao = VERSAO_300;	
-	
 	private MountIde mountIde;
 	private MountEmit mountEmit;
 	private MountInfModal mountInfModal;
@@ -21,9 +18,10 @@ public class MountInfMdfe extends XmlMdfeUtils {
 
 	public MountInfMdfe() {}
 
-	public MountInfMdfe(String id, MountIde mountIde, MountEmit mountEmit, MountInfModal mountInfModal,
+	public MountInfMdfe(String id, String versao, MountIde mountIde, MountEmit mountEmit, MountInfModal mountInfModal,
 			MountInfDoc mountInfDoc, MountSeg mountSeg, MountTot mountTot) {
 		this.id = id;
+		this.versao = versao;
 		this.mountIde = mountIde;
 		this.mountEmit = mountEmit;
 		this.mountInfModal = mountInfModal;
@@ -39,6 +37,15 @@ public class MountInfMdfe extends XmlMdfeUtils {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+	
+	@XmlAttribute(name="versao")	
+	public String getVersao() {
+		return versao;
+	}
+
+	public void setVersao(String versao) {
+		this.versao = versao;
 	}
 
 	@XmlElement(name="ide")
