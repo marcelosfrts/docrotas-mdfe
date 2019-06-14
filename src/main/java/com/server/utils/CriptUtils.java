@@ -11,7 +11,7 @@ public class CriptUtils {
 		
 		System.out.println("Encrypt: TESTE = " + passwordCrypt);
 		
-		System.out.println("This password is " + new String(isValidPassword(addCrypt("tESTE")) == true ? "valid" : "invalid"));
+		System.out.println("This password is " + new String(isValidPassword(addCrypt("tESTE")) ? "valid" : "invalid"));
 		
 	}
 	

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
 import com.server.entity.StateEntity;
 import com.server.repository.StateRepository;
 
@@ -24,6 +25,11 @@ public class StateController {
 	@GetMapping(value="/states")
 	public List<StateEntity> search() {
 		return stateRepository.findAll();
+	}
+	
+	@GetMapping(value="/allstates")
+	public String allsearch() {
+		return new Gson().toJson(stateRepository.findAllBySelectState());
 	}
 	
 	@PostMapping(value="/state")

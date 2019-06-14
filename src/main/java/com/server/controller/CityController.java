@@ -33,10 +33,10 @@ public class CityController {
 	
 	@GetMapping(value="/pgcity")
 	public Page<CityEntity> search(@RequestParam(value="pag", required=true)int pagina,
-									@RequestParam(value="qtd", required=true)int qtd,
-									@RequestParam(value="id", required=false)Long id,
-									@RequestParam(value="nomeLike", required=false)String nomeLike,
-									@RequestParam(value="siglaUfLike", required=false)String siglaUfLike) throws Exception {
+								   @RequestParam(value="qtd", required=true)int qtd,
+								   @RequestParam(value="id", required=false)Long id,
+								   @RequestParam(value="nomeLike", required=false)String nomeLike,
+								   @RequestParam(value="siglaUfLike", required=false)String siglaUfLike) throws Exception {
 		
 		Pageable pageable = new PageRequest(pagina, qtd);
 		Page<CityEntity> pageCity;
