@@ -1,7 +1,9 @@
 package com.server.mdfe;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlType(propOrder={"cMunDescarga", "xMunDescarga", "mountInfCTe"})
 public class MountInfMunDescarga {
 	
 	private String cMunDescarga;

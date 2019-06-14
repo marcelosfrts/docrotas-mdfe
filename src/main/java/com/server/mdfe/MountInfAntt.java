@@ -1,7 +1,9 @@
 package com.server.mdfe;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlType(propOrder={"rntrc", "mountInfCiot"})
 public class MountInfAntt {
 
 	private String rntrc;

@@ -1,6 +1,6 @@
 package com.server.mdfe;
 
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder={"xLgr","nro","xBairro","cMun","xMun","cep","uf","fone"})
@@ -68,7 +68,7 @@ public class MountEnderEmit {
 		this.xMun = xMun;
 	}
 
-	@XmlAttribute(name="CEP")
+	@XmlElement(name="CEP")
 	public String getCep() {
 		return cep;
 	}
@@ -77,7 +77,7 @@ public class MountEnderEmit {
 		this.cep = cep;
 	}
 
-	@XmlAttribute(name="UF")
+	@XmlElement(name="UF")
 	public String getUf() {
 		return uf;
 	}

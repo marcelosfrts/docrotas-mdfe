@@ -3,11 +3,14 @@ package com.server.utils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import org.json.simple.JSONObject;
 
+import com.server.entity.AddressEntity;
 import com.server.entity.CompanyEntity;
 import com.server.entity.MenuEntity;
+import com.server.entity.NeighborhoodEntity;
 
 public class MethodsUtils {
 	
@@ -54,6 +57,22 @@ public class MethodsUtils {
 				JSONObject jsonRoot = new JSONObject();
 				jsonRoot.put("value", company.getId());
 				jsonRoot.put("text", company.getId() + "-" + company.getReason());
+				
+				collectionObject.add(jsonRoot);
+			}
+		}
+		return collectionObject.toString();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String mountedNeighborhoodSelectedJson(List<NeighborhoodEntity> listEntityElement) throws Exception {
+		
+		Collection<JSONObject> collectionObject = new ArrayList<JSONObject>();
+		if (listEntityElement != null) {			
+			for (NeighborhoodEntity entity : listEntityElement) {
+				JSONObject jsonRoot = new JSONObject();
+				jsonRoot.put("value", entity.getId());
+				jsonRoot.put("text", entity.getNome());
 				
 				collectionObject.add(jsonRoot);
 			}

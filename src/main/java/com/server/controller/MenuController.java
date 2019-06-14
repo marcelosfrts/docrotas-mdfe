@@ -15,6 +15,6 @@ public class MenuController {
 	@PostMapping(value = "/menu")
 	public String carregarMenu() throws Exception {
 		MethodsUtils methods = new MethodsUtils();
-		return methods.mountedMenuJson(menuRepository.findAll()).toString();
+		return methods.mountedMenuJson(menuRepository.findAllOrderByPaiAndOrder()).toString();
 	}
 }

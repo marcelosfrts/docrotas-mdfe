@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdfeProc xmlns="http://www.portalfiscal.inf.br/mdfe" versao="3.00">
     <MDFe xmlns="http://www.portalfiscal.inf.br/mdfe">
-        <infMDFe versao="3.00" Id="MDFe35180303876961000233580010000037411231618483">
+        <infMDFe Id="MDFe35180303876961000233580010000037411231618483" versao="3.00">
             <ide>
                 <cUF>35</cUF>
                 <tpAmb>2</tpAmb>
@@ -10,9 +10,10 @@
                 <mod>58</mod>
                 <serie>1</serie>
                 <nMDF>3741</nMDF>
+                <cMDF>23161848</cMDF>
                 <cDV>3</cDV>
                 <modal>1</modal>
-                <dhEmi>2019-04-17T00:06:24-0300</dhEmi>
+                <dhEmi>2019-06-06T20:30:38-03:00</dhEmi>
                 <tpEmis>1</tpEmis>
                 <procEmi>0</procEmi>
                 <verProc>1.5.3</verProc>
@@ -22,64 +23,74 @@
                     <cMunCarrega>3550308</cMunCarrega>
                     <xMunCarrega>SAO PAULO</xMunCarrega>
                 </infMunCarrega>
-                <dhIniViagem>2019-04-17T00:06:24-0300</dhIniViagem>
+                <dhIniViagem>2019-06-06T20:30:38-03:00</dhIniViagem>
             </ide>
             <emit>
                 <CNPJ>03876961000233</CNPJ>
                 <IE>143263811113</IE>
                 <xNome>CAMPOS E BUENO TRANSPORTES LTDA - EPP</xNome>
                 <xFant>IDEIA DE MINAS TRANSPORTES</xFant>
-                <enderEmit CEP="02188090" UF="SP">
+                <enderEmit>
                     <xLgr>RUA SOLDADO ARISTIDES GOUVEIA</xLgr>
                     <nro>374</nro>
                     <xBairro>PARQUE NOVO MUNDO</xBairro>
                     <cMun>3550308</cMun>
                     <xMun>SAO PAULO</xMun>
+                    <CEP>02188090</CEP>
+                    <UF>SP</UF>
                     <fone>1138046933</fone>
                 </enderEmit>
             </emit>
             <infModal versaoModal="3.00">
                 <rodo>
                     <infANTT>
+                        <RNTRC>46881758</RNTRC>
                         <infCIOT>
                             <CIOT>012345678912</CIOT>
                             <CNPJ>01405106000138</CNPJ>
                         </infCIOT>
-                        <RNTRC>46881758</RNTRC>
                     </infANTT>
-                    <infANTT>
-                        <capKG>32000</capKG>
-                        <condutor>
-                            <CPF>11322031630</CPF>
-                            <xNome>LUIZ GUSTAVO DE SOUZA NUNES</xNome>
-                        </condutor>
+                    <veicTracao>
                         <placa>JAH5522</placa>
                         <RENAVAM>475626605</RENAVAM>
                         <tara>16000</tara>
-                        <tpCar>02</tpCar>
+                        <capKG>32000</capKG>
+                        <condutor>
+                            <xNome>LUIZ GUSTAVO DE SOUZA NUNES</xNome>
+                            <CPF>11322031630</CPF>
+                        </condutor>
                         <tpRod>03</tpRod>
+                        <tpCar>02</tpCar>
                         <UF>RS</UF>
-                    </infANTT>
+                    </veicTracao>
                 </rodo>
             </infModal>
-            <infDoc/>
+            <infDoc>
+                <infMunDescarga>
+                    <cMunDescarga>3170206</cMunDescarga>
+                    <xMunDescarga>UBERLANDIA</xMunDescarga>
+                    <infCTe>
+                        <chCTe>35180303876961000233570010000796961000799182</chCTe>
+                    </infCTe>
+                </infMunDescarga>
+            </infDoc>
             <seg>
                 <infResp>
-                    <CNPJ>03876961000233</CNPJ>
                     <respSeg>1</respSeg>
+                    <CNPJ>03876961000233</CNPJ>
                 </infResp>
                 <infSeg>
-                    <CNPJ>61198164000160</CNPJ>
                     <xSeg>PORTO SEGURO</xSeg>
+                    <CNPJ>61198164000160</CNPJ>
                 </infSeg>
                 <nApol>0655067051</nApol>
                 <nAver>41217630165</nAver>
             </seg>
             <tot>
-                <cUnid>01</cUnid>
                 <qCTe>66</qCTe>
-                <qCarga>8860.0000</qCarga>
                 <vCarga>137900.93</vCarga>
+                <cUnid>01</cUnid>
+                <qCarga>8860.0000</qCarga>
             </tot>
         </infMDFe>
     </MDFe>

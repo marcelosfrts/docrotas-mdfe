@@ -3,7 +3,7 @@ Implementation-Title: DocRotasMDFe
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: Marcelo
 Implementation-Vendor-Id: br.com.marcelo
-Build-Jdk: 1.8.0_181
+Build-Jdk: 1.8.0_144
 Implementation-URL: http://projects.spring.io/spring-boot/DocRotas-MDF
  e/
 Created-By: Maven Integration for Eclipse
