@@ -79,5 +79,18 @@ public class MethodsUtils {
 		}
 		return collectionObject.toString();
 	}
+	
+	public boolean isValidListDocuments(String key, List<String> listDocuments) throws Exception {
+		if (key != null && key.length() == 44) {
+			for (String document : listDocuments) {
+				if (!document.substring(20, 22).equals(key.substring(20, 22))) {
+					return false;
+				}
+			}
+		}else {
+			return false;
+		}
+		return true;
+	}
 
 }

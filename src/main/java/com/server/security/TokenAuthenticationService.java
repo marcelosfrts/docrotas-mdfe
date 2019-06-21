@@ -14,8 +14,8 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 public class TokenAuthenticationService {
 	
-	// EXPIRATION_TIME = 24hs
-	static final long EXPIRATION_TIME = 86_400_000;
+	// EXPIRATION_TIME = miliseconds
+	static final long EXPIRATION_TIME = 600_000;
 	static final String SECRET = "MySecret";
 	static final String TOKEN_PREFIX = "Bearer";
 	static final String HEADER_STRING = "Authorization";
@@ -34,7 +34,6 @@ public class TokenAuthenticationService {
 		String token = request.getHeader(HEADER_STRING);
 		
 		if (token != null) {
-			// faz parse do token
 			String user = Jwts.parser()
 					.setSigningKey(SECRET)
 					.parseClaimsJws(token.replace(TOKEN_PREFIX, ""))

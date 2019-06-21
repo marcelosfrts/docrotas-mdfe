@@ -26,5 +26,7 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 	
 	public Page<UserEntity> findByActiveAndIdCompany(Boolean active, Long idCompany, Pageable pageable);
 	public List<UserEntity> findByActiveAndIdCompany(Boolean active, Long idCompany);
+	
+	public List<UserEntity> findByUser(String user);
 
 }

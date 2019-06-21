@@ -13,7 +13,7 @@
                 <cMDF>23161848</cMDF>
                 <cDV>3</cDV>
                 <modal>1</modal>
-                <dhEmi>2019-06-06T20:30:38-03:00</dhEmi>
+                <dhEmi>2019-06-18T00:41:00-03:00</dhEmi>
                 <tpEmis>1</tpEmis>
                 <procEmi>0</procEmi>
                 <verProc>1.5.3</verProc>
@@ -23,7 +23,7 @@
                     <cMunCarrega>3550308</cMunCarrega>
                     <xMunCarrega>SAO PAULO</xMunCarrega>
                 </infMunCarrega>
-                <dhIniViagem>2019-06-06T20:30:38-03:00</dhIniViagem>
+                <dhIniViagem>2019-06-18T00:41:00-03:00</dhIniViagem>
             </ide>
             <emit>
                 <CNPJ>03876961000233</CNPJ>
