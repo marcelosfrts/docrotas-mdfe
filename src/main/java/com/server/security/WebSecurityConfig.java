@@ -22,7 +22,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.cors().configurationSource(corsConfigurationSource()).and().csrf().disable().authorizeRequests()
+		httpSecurity
+			.requiresChannel().requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null).requiresSecure()
+			.and()
+			.cors().configurationSource(corsConfigurationSource()).and().csrf().disable().authorizeRequests()
 			.antMatchers(HttpMethod.GET, "/home").permitAll()
 			.antMatchers(HttpMethod.POST, "/login").permitAll()
 			.antMatchers(HttpMethod.POST, "/logout").permitAll()
